@@ -1,0 +1,29 @@
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+PyPDF2>=3.0.0
+pdfplumber>=0.10.0
+
+# GitHub API
+PyGithub>=2.1.0
+
+# Paper APIs
+arxiv>=2.0.0
+scholarly>=1.7.0
+
+# Code analysis
+tree-sitter>=0.20.0
+gitpython>=3.1.0
+
+# Environment management
+docker>=6.1.0
+pyyaml>=6.0
+
+# CLI
+click>=8.1.0
+rich>=13.0.0
+inquirer>=3.1.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
