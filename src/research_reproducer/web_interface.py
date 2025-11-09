@@ -20,20 +20,23 @@ logger = logging.getLogger(__name__)
 class WebInterface:
     """Web interface for Research Reproducer"""
 
-    def __init__(self, work_dir: str = './reproductions', github_token: Optional[str] = None):
+    def __init__(self, work_dir: str = './reproductions', github_token: Optional[str] = None, use_ai: bool = False):
         """
         Args:
             work_dir: Working directory for reproductions
             github_token: GitHub API token
+            use_ai: Enable AI assistant
         """
         self.work_dir = work_dir
         self.github_token = github_token
+        self.use_ai = use_ai
 
     def reproduce_paper(
         self,
         paper_source: str,
         source_type: str,
         use_cache: bool,
+        use_ai: bool,
         timeout_minutes: int,
         progress=gr.Progress()
     ) -> Tuple[str, str, str]:
@@ -49,7 +52,8 @@ class WebInterface:
             orchestrator = ReproductionOrchestrator(
                 work_dir=self.work_dir,
                 github_token=self.github_token,
-                use_cache=use_cache
+                use_cache=use_cache,
+                use_ai=use_ai
             )
 
             progress(0.2, desc="Processing paper...")
@@ -239,13 +243,18 @@ No NVIDIA GPUs found. Papers requiring GPU may fail or run slowly.
                                     label="Use cache (faster for repeated runs)"
                                 )
 
-                                timeout = gr.Slider(
-                                    minimum=5,
-                                    maximum=120,
-                                    value=30,
-                                    step=5,
-                                    label="Timeout (minutes)"
+                                use_ai_checkbox = gr.Checkbox(
+                                    value=self.use_ai,
+                                    label="AI Assistant (requires Ollama or API keys)"
                                 )
+
+                            timeout = gr.Slider(
+                                minimum=5,
+                                maximum=120,
+                                value=30,
+                                step=5,
+                                label="Timeout (minutes)"
+                            )
 
                             reproduce_btn = gr.Button("🚀 Reproduce Paper", variant="primary")
 
@@ -264,7 +273,7 @@ No NVIDIA GPUs found. Papers requiring GPU may fail or run slowly.
 
                     reproduce_btn.click(
                         fn=self.reproduce_paper,
-                        inputs=[paper_input, source_type, use_cache, timeout],
+                        inputs=[paper_input, source_type, use_cache, use_ai_checkbox, timeout],
                         outputs=[status_output, report_output, logs_output]
                     )
 
@@ -333,6 +342,8 @@ No NVIDIA GPUs found. Papers requiring GPU may fail or run slowly.
                     - Start with "Analyze" to check if code exists before full reproduction
                     - Increase timeout for complex papers
                     - Papers requiring GPU may fail without available GPU
+                    - Enable AI Assistant for paper explanations, debugging help, and parameter suggestions
+                    - AI Assistant requires Ollama (local, free) or API keys (OpenAI, Anthropic, HuggingFace)
 
                     ## Examples
                     - arXiv: `1706.03762` (Attention Is All You Need)
@@ -348,18 +359,19 @@ No NVIDIA GPUs found. Papers requiring GPU may fail or run slowly.
         interface.launch(**kwargs)
 
 
-def create_web_interface(work_dir: str = './reproductions', github_token: Optional[str] = None):
+def create_web_interface(work_dir: str = './reproductions', github_token: Optional[str] = None, use_ai: bool = False):
     """
     Create and return web interface
 
     Args:
         work_dir: Working directory for reproductions
         github_token: GitHub API token
+        use_ai: Enable AI assistant
 
     Returns:
         Gradio interface
     """
-    web = WebInterface(work_dir=work_dir, github_token=github_token)
+    web = WebInterface(work_dir=work_dir, github_token=github_token, use_ai=use_ai)
     return web.create_interface()
 
 
@@ -367,7 +379,8 @@ def launch_web_interface(
     work_dir: str = './reproductions',
     github_token: Optional[str] = None,
     share: bool = False,
-    port: int = 7860
+    port: int = 7860,
+    use_ai: bool = False
 ):
     """
     Launch web interface
@@ -377,8 +390,9 @@ def launch_web_interface(
         github_token: GitHub API token
         share: Create public share link
         port: Port to run on
+        use_ai: Enable AI assistant
     """
-    web = WebInterface(work_dir=work_dir, github_token=github_token)
+    web = WebInterface(work_dir=work_dir, github_token=github_token, use_ai=use_ai)
     web.launch(share=share, server_port=port)
 
 
