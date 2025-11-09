@@ -20,6 +20,7 @@ from .repo_analyzer import RepositoryAnalyzer
 from .env_setup import EnvironmentSetup
 from .interactive import InteractiveSession
 from .executor import CodeExecutor
+from .cache import ReproducerCache
 
 logger = logging.getLogger(__name__)
 console = Console()
@@ -28,11 +29,12 @@ console = Console()
 class ReproductionOrchestrator:
     """Main orchestrator for reproducing research papers"""
 
-    def __init__(self, work_dir: str = './reproductions', github_token: Optional[str] = None):
+    def __init__(self, work_dir: str = './reproductions', github_token: Optional[str] = None, use_cache: bool = True):
         """
         Args:
             work_dir: Working directory for reproductions
             github_token: GitHub API token
+            use_cache: Enable caching for faster repeated operations
         """
         self.work_dir = Path(work_dir)
         self.work_dir.mkdir(parents=True, exist_ok=True)
@@ -40,7 +42,12 @@ class ReproductionOrchestrator:
         self.paper_ingestion = PaperIngestion()
         self.repo_finder = RepositoryFinder(github_token=github_token)
 
+        # Initialize cache
+        self.use_cache = use_cache
+        self.cache = ReproducerCache() if use_cache else None
+
         self.session_dir = None
+        self.checkpoint_file = None
         self.report = {
             'paper': {},
             'repositories': [],
@@ -95,15 +102,27 @@ class ReproductionOrchestrator:
         console.print(f"\n[bold cyan]Research Reproducer[/bold cyan]")
         console.print(f"Starting reproduction from arXiv: {arxiv_id}\n")
 
-        # Fetch paper metadata
-        with Progress(
-            SpinnerColumn(),
-            TextColumn("[progress.description]{task.description}"),
-            console=console,
-        ) as progress:
-            task = progress.add_task("Fetching paper from arXiv...", total=None)
-            paper_metadata = self.paper_ingestion.extract_from_arxiv(arxiv_id)
-            progress.update(task, completed=True)
+        # Try to get from cache first
+        paper_metadata = None
+        if self.use_cache:
+            paper_metadata = self.cache.get_paper_metadata(arxiv_id)
+            if paper_metadata:
+                console.print(f"[dim]Using cached paper metadata[/dim]")
+
+        # Fetch paper metadata if not cached
+        if not paper_metadata:
+            with Progress(
+                SpinnerColumn(),
+                TextColumn("[progress.description]{task.description}"),
+                console=console,
+            ) as progress:
+                task = progress.add_task("Fetching paper from arXiv...", total=None)
+                paper_metadata = self.paper_ingestion.extract_from_arxiv(arxiv_id)
+                progress.update(task, completed=True)
+
+            # Cache the result
+            if self.use_cache:
+                self.cache.set_paper_metadata(arxiv_id, paper_metadata)
 
         self.report['paper'] = paper_metadata
 
@@ -167,8 +186,12 @@ class ReproductionOrchestrator:
         paper_name = paper_metadata.get('title', 'unknown')[:50].replace(' ', '_')
         self.session_dir = self.work_dir / f"{paper_name}_{timestamp}"
         self.session_dir.mkdir(parents=True, exist_ok=True)
+        self.checkpoint_file = self.session_dir / '.checkpoint.json'
 
         console.print(f"[dim]Session directory: {self.session_dir}[/dim]\n")
+
+        # Initialize checkpoint
+        self._save_checkpoint('initialized', {'paper': paper_metadata})
 
         # Step 1: Find repositories
         console.print("[bold]Step 1: Finding repositories[/bold]")
@@ -339,6 +362,43 @@ class ReproductionOrchestrator:
 
         except Exception as e:
             logger.error(f"Failed to save report: {e}")
+
+    def _save_checkpoint(self, stage: str, data: Dict):
+        """Save checkpoint for resuming interrupted reproductions"""
+        if not self.checkpoint_file:
+            return
+
+        checkpoint = {}
+        if self.checkpoint_file.exists():
+            try:
+                with open(self.checkpoint_file) as f:
+                    checkpoint = json.load(f)
+            except:
+                pass
+
+        checkpoint[stage] = {
+            'timestamp': datetime.now().isoformat(),
+            'data': data
+        }
+        checkpoint['last_stage'] = stage
+
+        try:
+            with open(self.checkpoint_file, 'w') as f:
+                json.dump(checkpoint, f, indent=2, default=str)
+        except Exception as e:
+            logger.warning(f"Failed to save checkpoint: {e}")
+
+    def _load_checkpoint(self) -> Dict:
+        """Load checkpoint if exists"""
+        if not self.checkpoint_file or not self.checkpoint_file.exists():
+            return {}
+
+        try:
+            with open(self.checkpoint_file) as f:
+                return json.load(f)
+        except Exception as e:
+            logger.warning(f"Failed to load checkpoint: {e}")
+            return {}
 
     def cleanup(self):
         """Cleanup resources"""
