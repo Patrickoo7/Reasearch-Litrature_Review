@@ -27,3 +27,10 @@ inquirer>=3.1.0
 # Utilities
 python-dotenv>=1.0.0
 tqdm>=4.66.0
+
+# Web interface (optional)
+gradio>=4.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0

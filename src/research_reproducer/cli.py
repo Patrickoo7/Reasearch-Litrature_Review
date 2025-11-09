@@ -280,5 +280,111 @@ def inspect(repo_path, verbose):
             console.print(f"  • {req}")
 
 
+@main.command()
+@click.option('--share', is_flag=True, help='Create public share link')
+@click.option('--port', type=int, default=7860, help='Port to run on')
+@click.option('--github-token', envvar='GITHUB_TOKEN', help='GitHub API token')
+def web(share, port, github_token):
+    """
+    Launch web interface for browser-based access
+
+    The web interface provides an easy-to-use GUI for reproducing papers.
+    """
+    try:
+        from .web_interface import launch_web_interface
+
+        console.print("\n[bold cyan]Launching Research Reproducer Web Interface[/bold cyan]")
+        console.print(f"[dim]Server will run on http://localhost:{port}[/dim]\n")
+
+        launch_web_interface(
+            github_token=github_token,
+            share=share,
+            port=port
+        )
+
+    except ImportError:
+        console.print("[red]Error: gradio not installed[/red]")
+        console.print("Install with: pip install gradio")
+        sys.exit(1)
+
+
+@main.group()
+def cache():
+    """Manage cache for faster operations"""
+    pass
+
+
+@cache.command('stats')
+def cache_stats():
+    """Show cache statistics"""
+    from .cache import ReproducerCache
+
+    c = ReproducerCache()
+    stats = c.get_cache_stats()
+
+    console.print("\n[bold cyan]Cache Statistics[/bold cyan]\n")
+    console.print(f"Papers cached: {stats['papers']}")
+    console.print(f"Repositories cached: {stats['repositories']}")
+    console.print(f"Analyses cached: {stats['analysis']}")
+    console.print(f"Cache directory: {stats['cache_dir']}\n")
+
+
+@cache.command('clear')
+@click.option('--type', 'cache_type', type=click.Choice(['papers', 'repositories', 'analysis', 'all']),
+              default='all', help='Type of cache to clear')
+@click.confirmation_option(prompt='Are you sure you want to clear the cache?')
+def cache_clear(cache_type):
+    """Clear cache"""
+    from .cache import ReproducerCache
+
+    c = ReproducerCache()
+
+    if cache_type == 'all':
+        c.clear_cache(None)
+        console.print("[green]✓[/green] All cache cleared")
+    else:
+        c.clear_cache(cache_type)
+        console.print(f"[green]✓[/green] {cache_type} cache cleared")
+
+
+@main.command()
+def gpu():
+    """Check GPU availability and status"""
+    from .gpu_utils import get_gpu_requirements_summary
+    from rich.table import Table
+
+    console.print("\n[bold cyan]GPU Status[/bold cyan]\n")
+
+    gpu_info = get_gpu_requirements_summary()
+
+    if gpu_info['gpu_available']:
+        console.print(f"[green]✓[/green] {gpu_info['gpu_count']} GPU(s) available")
+        console.print(f"Total Memory: {gpu_info['total_memory_gb']} GB")
+        console.print(f"Free Memory: {gpu_info['free_memory_gb']} GB")
+
+        if gpu_info['cuda_version']:
+            console.print(f"CUDA Version: {gpu_info['cuda_version']}")
+
+        if gpu_info['gpus']:
+            console.print("\n[bold]GPUs:[/bold]")
+            table = Table(show_header=True)
+            table.add_column("Index", style="cyan")
+            table.add_column("Name", style="green")
+            table.add_column("Memory", style="yellow")
+
+            for gpu in gpu_info['gpus']:
+                table.add_row(
+                    str(gpu['index']),
+                    gpu['name'],
+                    f"{gpu['memory_total_mb']} MB"
+                )
+
+            console.print(table)
+    else:
+        console.print("[yellow]⚠[/yellow] No GPU detected")
+        console.print("\nML papers may fail or run slowly without GPU.")
+        console.print("Consider using cloud GPU services (Colab, Paperspace, etc.)")
+
+
 if __name__ == '__main__':
     main()

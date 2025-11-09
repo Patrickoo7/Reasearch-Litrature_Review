@@ -7,6 +7,7 @@ import logging
 from typing import Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
+from .retry_utils import retry_with_backoff, RetryableError
 
 logger = logging.getLogger(__name__)
 
@@ -77,6 +78,7 @@ class RepositoryFinder:
 
         return sorted_repos
 
+    @retry_with_backoff(max_attempts=3, base_delay=2.0, exceptions=(requests.exceptions.RequestException,))
     def _get_repo_info(self, github_url: str) -> Optional[Dict]:
         """Get repository information from GitHub API"""
         try:
@@ -114,6 +116,7 @@ class RepositoryFinder:
 
         return None
 
+    @retry_with_backoff(max_attempts=3, base_delay=2.0, exceptions=(requests.exceptions.RequestException,))
     def _search_papers_with_code(self, title: str) -> List[Dict]:
         """Search Papers with Code for repositories"""
         repos = []

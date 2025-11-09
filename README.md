@@ -4,6 +4,8 @@
 
 Research Reproducer helps you find, setup, and run code from research papers automatically. Simply provide a paper (PDF, arXiv ID, or URL) and let the tool handle the rest!
 
+🌐 **[Try it online!](https://patrickoo7.github.io/Reasearch-Litrature_Review/)** | 📖 [Documentation](#quick-start) | 🚀 [Deploy Your Own](#deployment)
+
 ## Features
 
 - 📄 **Paper Ingestion**: Extract metadata and GitHub links from PDFs, arXiv papers, or URLs
@@ -16,7 +18,13 @@ Research Reproducer helps you find, setup, and run code from research papers aut
 
 ## Quick Start
 
-### Installation
+### 🌐 Try Online (Easiest!)
+
+Visit **[https://patrickoo7.github.io/Reasearch-Litrature_Review/](https://patrickoo7.github.io/Reasearch-Litrature_Review/)**
+
+No installation needed! Just enter a paper and start reproducing.
+
+### 💻 Local Installation
 
 ```bash
 # Clone the repository
@@ -25,9 +33,12 @@ cd Reasearch-Litrature_Review
 
 # Install dependencies
 pip install -e .
+
+# Launch web interface
+research-reproduce web
 ```
 
-### Basic Usage
+### 🖥️ Command Line Usage
 
 ```bash
 # Reproduce from arXiv paper
@@ -296,6 +307,15 @@ Contributions welcome! Areas for improvement:
 - Improved error diagnosis
 - Cloud compute integration
 - Result validation against paper claims
+
+## Deployment
+
+Want to host your own instance? See **[DEPLOYMENT.md](DEPLOYMENT.md)** for detailed instructions.
+
+**Quick Deploy Options:**
+- **GitHub Pages** (Frontend) - Free, instant
+- **Hugging Face Spaces** (Full Stack) - Free, no credit card needed
+- **Render/Railway** (Backend API) - Free tier available
 
 ## Development Setup
 
