@@ -4,9 +4,9 @@ A comprehensive, structured curriculum to master Machine Learning from mathemati
 
 ## 📚 Curriculum Structure
 
-This curriculum contains **13 core modules** (with 2 specializations in Module 7), progressing from mathematical fundamentals to advanced production systems and reinforcement learning. Each module contains focused lessons that build upon previous knowledge.
+This curriculum contains **17 comprehensive modules** (with 2 specializations in Module 7), progressing from mathematical fundamentals to advanced GenAI, LLMs, and responsible AI deployment. Each module contains focused lessons that build upon previous knowledge.
 
-**Total Content:** 63 comprehensive lessons + 56+ visualizations
+**Total Content:** 93 comprehensive lessons + 64+ visualizations
 
 ---
 
@@ -577,6 +577,231 @@ Master reinforcement learning from foundations to production deployment, includi
 
 ---
 
+### Module 13: Classical AI Algorithms & Search 🎯
+**Level: Intermediate | Time: 2-3 weeks | Lessons: 5**
+
+Master foundational AI algorithms that power modern systems and LLM reasoning.
+
+- **Lesson 1:** [Search Algorithms and Pathfinding](Module%2013%20-%20Classical%20AI%20Algorithms%20and%20Search/Lesson%201%20-%20Search%20Algorithms%20and%20Pathfinding.md)
+  - BFS, DFS, and uniform-cost search
+  - A* algorithm and heuristics design
+  - Beam search (used in LLM decoding)
+  - IDA* for memory-efficient search
+
+- **Lesson 2:** [Game Playing AI and MCTS](Module%2013%20-%20Classical%20AI%20Algorithms%20and%20Search/Lesson%202%20-%20Game%20Playing%20AI%20and%20MCTS.md)
+  - Minimax algorithm with alpha-beta pruning
+  - Monte Carlo Tree Search (MCTS)
+  - AlphaGo's approach
+  - Game tree exploration
+
+- **Lesson 3:** [Optimization Algorithms](Module%2013%20-%20Classical%20AI%20Algorithms%20and%20Search/Lesson%203%20-%20Optimization%20Algorithms.md)
+  - Genetic algorithms
+  - Simulated annealing
+  - Particle Swarm Optimization (PSO)
+  - Hill climbing variants
+
+- **Lesson 4:** [Graph Algorithms and PageRank](Module%2013%20-%20Classical%20AI%20Algorithms%20and%20Search/Lesson%204%20-%20Graph%20Algorithms%20and%20PageRank.md)
+  - Dijkstra's algorithm
+  - PageRank (Google's algorithm)
+  - Community detection
+  - Graph neural network foundations
+
+- **Lesson 5:** [Planning and Constraint Satisfaction](Module%2013%20-%20Classical%20AI%20Algorithms%20and%20Search/Lesson%205%20-%20Planning%20and%20Constraint%20Satisfaction.md)
+  - STRIPS planning
+  - Constraint Satisfaction Problems (CSP)
+  - Backtracking with constraint propagation
+  - Applications in scheduling and reasoning
+
+**✅ After Module 13:** You understand classical AI algorithms used in modern LLM systems!
+
+---
+
+### Module 14: Generative Vision Models 🎨
+**Level: Advanced | Time: 3-4 weeks | Lessons: 6**
+
+Master generative models for images - GANs, VAEs, and Stable Diffusion.
+
+- **Lesson 1:** [GANs and VAEs Foundations](Module%2014%20-%20Generative%20Vision%20Models/Lesson%201%20-%20GANs%20and%20VAEs%20Foundations.md)
+  - GAN architecture and training
+  - StyleGAN and CycleGAN
+  - VAE (Variational Autoencoder)
+  - β-VAE for disentanglement
+
+- **Lesson 2:** [Diffusion Models Fundamentals](Module%2014%20-%20Generative%20Vision%20Models/Lesson%202%20-%20Diffusion%20Models%20Fundamentals.md)
+  - Forward and reverse diffusion process
+  - DDPM (Denoising Diffusion Probabilistic Models)
+  - DDIM for faster sampling
+  - Score-based generative models
+
+- **Lesson 3:** [Stable Diffusion Deep Dive](Module%2014%20-%20Generative%20Vision%20Models/Lesson%203%20-%20Stable%20Diffusion%20Deep%20Dive.md)
+  - Latent diffusion models
+  - CLIP guidance and conditioning
+  - Classifier-Free Guidance (CFG)
+  - U-Net architecture for diffusion
+
+- **Lesson 4:** [Text-to-Image and Control](Module%2014%20-%20Generative%20Vision%20Models/Lesson%204%20-%20Text-to-Image%20and%20Control.md)
+  - Text-to-image pipelines
+  - ControlNet for spatial control
+  - IP-Adapter for style transfer
+  - Inpainting and outpainting
+
+- **Lesson 5:** [Fine-Tuning and Personalization](Module%2014%20-%20Generative%20Vision%20Models/Lesson%205%20-%20Fine-Tuning%20and%20Personalization.md)
+  - DreamBooth for custom subjects
+  - LoRA for diffusion models
+  - Textual Inversion
+  - Hypernetworks
+
+- **Lesson 6:** [Production Ethics and Evaluation](Module%2014%20-%20Generative%20Vision%20Models/Lesson%206%20-%20Production%20Ethics%20and%20Evaluation.md)
+  - FID, IS, and CLIPScore metrics
+  - Ethical concerns (deepfakes, copyright)
+  - Safety filters and watermarking
+  - Deployment optimization
+
+**✅ After Module 14:** You can build and deploy text-to-image generation systems!
+
+---
+
+### Module 15: Multimodal Models & Advanced LLMs 🤖
+**Level: Advanced | Time: 4-5 weeks | Lessons: 7**
+
+Master modern LLM architectures, multimodal models, and production deployment.
+
+- **Lesson 1:** [LLM Architectures Deep Dive](Module%2015%20-%20Multimodal%20Models%20and%20Advanced%20LLMs/Lesson%201%20-%20LLM%20Architectures%20Deep%20Dive.md)
+  - GPT, LLaMA, Mistral architectures
+  - Mixture of Experts (Mixtral)
+  - Grouped Query Attention (GQA)
+  - Rotary Position Embeddings (RoPE)
+
+- **Lesson 2:** [Small Language Models and Edge Deployment](Module%2015%20-%20Multimodal%20Models%20and%20Advanced%20LLMs/Lesson%202%20-%20Small%20Language%20Models%20and%20Edge%20Deployment.md)
+  - Phi-3, Gemma, Llama-3-8B
+  - Knowledge distillation
+  - Quantization (GPTQ, AWQ, GGUF)
+  - On-device deployment
+
+- **Lesson 3:** [Multimodal Vision-Language Models](Module%2015%20-%20Multimodal%20Models%20and%20Advanced%20LLMs/Lesson%203%20-%20Multimodal%20Vision-Language%20Models.md)
+  - CLIP architecture and training
+  - BLIP-2 and Flamingo
+  - GPT-4V and LLaVA
+  - Visual instruction tuning
+
+- **Lesson 4:** [Advanced Prompting and In-Context Learning](Module%2015%20-%20Multimodal%20Models%20and%20Advanced%20LLMs/Lesson%204%20-%20Advanced%20Prompting%20and%20In-Context%20Learning.md)
+  - Chain-of-Thought (CoT) prompting
+  - Self-consistency and Tree-of-Thought
+  - Few-shot and zero-shot learning
+  - Prompt optimization techniques
+
+- **Lesson 5:** [LLM Evaluation and Benchmarking](Module%2015%20-%20Multimodal%20Models%20and%20Advanced%20LLMs/Lesson%205%20-%20LLM%20Evaluation%20and%20Benchmarking.md)
+  - MMLU, HumanEval, MT-Bench
+  - LLM-as-a-judge evaluation
+  - Benchmark gaming and true capabilities
+  - Domain-specific evaluation
+
+- **Lesson 6:** [Efficient Inference and Serving](Module%2015%20-%20Multimodal%20Models%20and%20Advanced%20LLMs/Lesson%206%20-%20Efficient%20Inference%20and%20Serving.md)
+  - KV cache optimization
+  - vLLM and continuous batching
+  - TensorRT-LLM
+  - PagedAttention and FlashAttention
+
+- **Lesson 7:** [LLMOps Production and Monitoring](Module%2015%20-%20Multimodal%20Models%20and%20Advanced%20LLMs/Lesson%207%20-%20LLMOps%20Production%20and%20Monitoring.md)
+  - Prompt versioning and management
+  - Token usage tracking and cost optimization
+  - Latency and quality monitoring
+  - A/B testing for LLMs
+
+**✅ After Module 15:** You can deploy and optimize production LLM systems!
+
+---
+
+### Module 16: RAG, Vector Databases & AI Agents ⚡
+**Level: Advanced | Time: 4-5 weeks | Lessons: 8** ⭐ *Most Practical Module*
+
+Build production RAG systems and autonomous AI agents.
+
+- **Lesson 1:** [Vector Embeddings and Representation Learning](Module%2016%20-%20RAG%20Vector%20Databases%20and%20AI%20Agents/Lesson%201%20-%20Vector%20Embeddings%20and%20Representation%20Learning.md)
+  - Sentence transformers
+  - OpenAI ada-002 embeddings
+  - Embedding fine-tuning
+  - Dimensionality reduction for vectors
+
+- **Lesson 2:** [Vector Database Internals](Module%2016%20-%20RAG%20Vector%20Databases%20and%20AI%20Agents/Lesson%202%20-%20Vector%20Database%20Internals.md)
+  - FAISS index types and optimization
+  - Weaviate and Pinecone
+  - Qdrant and Milvus
+  - Choosing the right vector DB
+
+- **Lesson 3:** [Similarity Search and ANN Algorithms](Module%2016%20-%20RAG%20Vector%20Databases%20and%20AI%20Agents/Lesson%203%20-%20Similarity%20Search%20and%20ANN%20Algorithms.md)
+  - HNSW (Hierarchical Navigable Small World)
+  - IVF (Inverted File Index)
+  - Product Quantization (PQ)
+  - LSH (Locality-Sensitive Hashing)
+
+- **Lesson 4:** [Advanced RAG Patterns and Chunking](Module%2016%20-%20RAG%20Vector%20Databases%20and%20AI%20Agents/Lesson%204%20-%20Advanced%20RAG%20Patterns%20and%20Chunking.md)
+  - Semantic chunking strategies
+  - HyDE (Hypothetical Document Embeddings)
+  - Multi-query and query rewriting
+  - Parent-child chunking
+
+- **Lesson 5:** [Query Optimization and Reranking](Module%2016%20-%20RAG%20Vector%20Databases%20and%20AI%20Agents/Lesson%205%20-%20Query%20Optimization%20and%20Reranking.md)
+  - Hybrid search (BM25 + vector)
+  - Cross-encoder reranking
+  - Reciprocal Rank Fusion (RRF)
+  - Query expansion and routing
+
+- **Lesson 6:** [AI Agents Fundamentals and ReAct](Module%2016%20-%20RAG%20Vector%20Databases%20and%20AI%20Agents/Lesson%206%20-%20AI%20Agents%20Fundamentals%20and%20ReAct.md)
+  - ReAct pattern (Reasoning + Acting)
+  - Tool use and function calling
+  - Agent memory systems
+  - Planning and reflection
+
+- **Lesson 7:** [Tool Use and Function Calling](Module%2016%20-%20RAG%20Vector%20Databases%20and%20AI%20Agents/Lesson%207%20-%20Tool%20Use%20and%20Function%20Calling.md)
+  - OpenAI function calling
+  - Tool schema design
+  - Error handling and retries
+  - Structured output parsing
+
+- **Lesson 8:** [Multi-Agent and Production RAG](Module%2016%20-%20RAG%20Vector%20Databases%20and%20AI%20Agents/Lesson%208%20-%20Multi-Agent%20and%20Production%20RAG.md)
+  - AutoGen and CrewAI
+  - LangGraph for agent orchestration
+  - Production RAG architecture
+  - Caching and optimization
+
+**✅ After Module 16:** You can build production RAG systems and autonomous agents!
+
+---
+
+### Module 17: AI Safety, Ethics & Responsible AI 🛡️
+**Level: Advanced | Time: 2-3 weeks | Lessons: 4**
+
+Deploy AI responsibly with safety, fairness, and governance frameworks.
+
+- **Lesson 1:** [AI Bias Fairness and Mitigation](Module%2017%20-%20AI%20Safety%20Ethics%20and%20Responsible%20AI/Lesson%201%20-%20AI%20Bias%20Fairness%20and%20Mitigation.md)
+  - Types of bias in ML systems
+  - Fairness metrics (demographic parity, equalized odds)
+  - Bias detection and mitigation
+  - Fairlearn and AIF360 libraries
+
+- **Lesson 2:** [AI Safety Alignment and Robustness](Module%2017%20-%20AI%20Safety%20Ethics%20and%20Responsible%20AI/Lesson%202%20-%20AI%20Safety%20Alignment%20and%20Robustness.md)
+  - AI alignment problem
+  - RLHF (Reinforcement Learning from Human Feedback)
+  - Constitutional AI
+  - Adversarial robustness and red teaming
+
+- **Lesson 3:** [Privacy Data Governance and Compliance](Module%2017%20-%20AI%20Safety%20Ethics%20and%20Responsible%20AI/Lesson%203%20-%20Privacy%20Data%20Governance%20and%20Compliance.md)
+  - GDPR and CCPA compliance
+  - Differential privacy implementation
+  - Federated learning
+  - PII detection and anonymization
+
+- **Lesson 4:** [Model Cards Documentation and Responsible Deployment](Module%2017%20-%20AI%20Safety%20Ethics%20and%20Responsible%20AI/Lesson%204%20-%20Model%20Cards%20Documentation%20and%20Responsible%20Deployment.md)
+  - Model cards and datasheets
+  - Environmental impact (carbon tracking)
+  - Stakeholder analysis
+  - Incident response planning
+
+**✅ After Module 17:** You can deploy AI systems with safety, fairness, and compliance!
+
+---
+
 ## 🎯 How to Use This Curriculum
 
 ### For Complete Beginners
@@ -738,12 +963,12 @@ Each lesson includes:
 
 | Metric | Count |
 |--------|-------|
-| **Total Modules** | 12 core + 1 specialization |
-| **Total Lessons** | 51 comprehensive lessons |
-| **Visualizations** | 40+ professional diagrams |
-| **Code Examples** | 300+ working implementations |
-| **Practice Exercises** | 150+ hands-on problems |
-| **Estimated Hours** | 400-600 hours total |
+| **Total Modules** | 17 comprehensive modules |
+| **Total Lessons** | 93 comprehensive lessons |
+| **Visualizations** | 64+ professional diagrams |
+| **Code Examples** | 450+ working implementations |
+| **Practice Exercises** | 220+ hands-on problems |
+| **Estimated Hours** | 600-900 hours total |
 
 ### Module Completion Status
 - ✅ Module 0: Math Essentials (4 lessons) - **100% Complete**
@@ -759,6 +984,12 @@ Each lesson includes:
 - ✅ Module 9: Explainable AI (4 lessons) - **100% Complete**
 - ✅ Module 10: Production MLOps (4 lessons) - **100% Complete**
 - ✅ Module 11: Capstone & Career (4 lessons) - **100% Complete**
+- ✅ Module 12: Reinforcement Learning (12 lessons) - **100% Complete**
+- ✅ Module 13: Classical AI & Search (5 lessons) - **100% Complete**
+- ✅ Module 14: Generative Vision Models (6 lessons) - **100% Complete**
+- ✅ Module 15: Advanced LLMs & Multimodal (7 lessons) - **100% Complete**
+- ✅ Module 16: RAG, Vector DBs & Agents (8 lessons) - **100% Complete** ⭐
+- ✅ Module 17: AI Safety & Ethics (4 lessons) - **100% Complete**
 
 **Overall Completion: 100%** 🎉
 

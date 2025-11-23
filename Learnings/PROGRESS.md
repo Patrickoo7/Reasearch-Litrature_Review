@@ -112,6 +112,81 @@
 - 🎮 **Complete RL pipeline** from bandits to production systems
 - 🔗 **Cross-references Module 7B** for LLM foundations
 
+### Module 13: Classical AI Algorithms & Search (100%) 🎯 **AI Foundations**
+- ✅ Lesson 1: Search Algorithms and Pathfinding (BFS, DFS, A*, Beam Search)
+- ✅ Lesson 2: Game Playing AI and MCTS (Minimax, Alpha-Beta, AlphaGo)
+- ✅ Lesson 3: Optimization Algorithms (Genetic, Simulated Annealing, PSO)
+- ✅ Lesson 4: Graph Algorithms and PageRank (Dijkstra, PageRank, Community Detection)
+- ✅ Lesson 5: Planning and Constraint Satisfaction (STRIPS, CSP, Backtracking)
+
+**Special Features:**
+- 🧠 **Classical AI foundations** for modern LLM reasoning
+- 🎨 **2 professional visualizations** (A* algorithm, MCTS tree)
+- 🔍 **Beam search** used in LLM decoding
+- 🎮 **AlphaGo's MCTS** approach explained
+
+### Module 14: Generative Vision Models (100%) 🎨 **Text-to-Image Generation**
+- ✅ Lesson 1: GANs and VAEs Foundations (StyleGAN, CycleGAN, β-VAE)
+- ✅ Lesson 2: Diffusion Models Fundamentals (DDPM, DDIM, Score-based)
+- ✅ Lesson 3: Stable Diffusion Deep Dive (Latent Diffusion, CLIP, CFG)
+- ✅ Lesson 4: Text-to-Image and Control (ControlNet, IP-Adapter, Inpainting)
+- ✅ Lesson 5: Fine-Tuning and Personalization (DreamBooth, LoRA, Textual Inversion)
+- ✅ Lesson 6: Production Ethics and Evaluation (FID, IS, CLIPScore, Safety)
+
+**Special Features:**
+- 🎨 **2 professional visualizations** (Diffusion process, Stable Diffusion architecture)
+- 💻 **121 code examples** with production-ready implementations
+- 🖼️ **Complete Stable Diffusion pipeline** from scratch
+- ⚡ **LoRA fine-tuning** for custom image generation
+- 🛡️ **Ethics and safety** considerations
+
+### Module 15: Multimodal Models & Advanced LLMs (100%) 🤖 **Production LLMs**
+- ✅ Lesson 1: LLM Architectures Deep Dive (GPT, LLaMA, Mistral, Mixtral MoE)
+- ✅ Lesson 2: Small Language Models and Edge Deployment (Phi-3, Gemma, Quantization)
+- ✅ Lesson 3: Multimodal Vision-Language Models (CLIP, BLIP-2, GPT-4V, LLaVA)
+- ✅ Lesson 4: Advanced Prompting and In-Context Learning (CoT, Self-Consistency, Tree-of-Thought)
+- ✅ Lesson 5: LLM Evaluation and Benchmarking (MMLU, HumanEval, MT-Bench)
+- ✅ Lesson 6: Efficient Inference and Serving (KV cache, vLLM, TensorRT-LLM, FlashAttention)
+- ✅ Lesson 7: LLMOps Production and Monitoring (Prompt versioning, Token tracking, A/B testing)
+
+**Special Features:**
+- 🎨 **1 professional visualization** (Multimodal architecture)
+- 💻 **140+ code examples** covering latest LLM techniques
+- 🚀 **Production deployment** with vLLM and TensorRT-LLM
+- 📊 **LLMOps best practices** for monitoring and optimization
+- 🎯 **Multimodal models** (CLIP, GPT-4V) explained
+
+### Module 16: RAG, Vector Databases & AI Agents (100%) ⚡ **MOST CRITICAL MODULE**
+- ✅ Lesson 1: Vector Embeddings and Representation Learning (Sentence transformers, Fine-tuning)
+- ✅ Lesson 2: Vector Database Internals (FAISS, Weaviate, Pinecone, Qdrant, Milvus)
+- ✅ Lesson 3: Similarity Search and ANN Algorithms (HNSW, IVF, Product Quantization, LSH)
+- ✅ Lesson 4: Advanced RAG Patterns and Chunking (Semantic chunking, HyDE, Multi-query)
+- ✅ Lesson 5: Query Optimization and Reranking (Hybrid search, Cross-encoder, RRF)
+- ✅ Lesson 6: AI Agents Fundamentals and ReAct (Reasoning + Acting, Tool use, Memory)
+- ✅ Lesson 7: Tool Use and Function Calling (OpenAI functions, Schema design, Error handling)
+- ✅ Lesson 8: Multi-Agent and Production RAG (AutoGen, CrewAI, LangGraph, Caching)
+
+**Special Features:**
+- 🎨 **2 professional visualizations** (RAG architecture, ReAct agent)
+- 💻 **165 code examples** - production RAG and agents
+- 🔥 **Complete RAG pipeline** with multiple vector DBs
+- 🤖 **AI Agents** with ReAct, tool use, and multi-agent systems
+- ⚡ **Most practical module** for real-world LLM applications
+
+### Module 17: AI Safety, Ethics & Responsible AI (100%) 🛡️ **Responsible Deployment**
+- ✅ Lesson 1: AI Bias Fairness and Mitigation (Fairness metrics, Bias detection, AIF360, Fairlearn)
+- ✅ Lesson 2: AI Safety Alignment and Robustness (RLHF, Constitutional AI, Adversarial robustness)
+- ✅ Lesson 3: Privacy Data Governance and Compliance (GDPR, CCPA, Differential privacy, Federated learning)
+- ✅ Lesson 4: Model Cards Documentation and Responsible Deployment (Model cards, Carbon tracking, Governance)
+
+**Special Features:**
+- 🎨 **1 professional visualization** (Responsible AI framework)
+- 💻 **80+ code examples** for safety and compliance
+- 🛡️ **Comprehensive safety frameworks** (Microsoft, Google PAIR)
+- 📊 **Fairness metrics** and bias mitigation techniques
+- 🌍 **Environmental impact** tracking and carbon footprint
+- 📋 **Model cards and datasheets** for transparency
+
 ---
 
 ## Key Improvements Based on Feedback ⭐
@@ -144,13 +219,13 @@
 
 | Metric | Count |
 |--------|-------|
-| **Total Modules** | 13 core + 1 specialization (Module 7A + 7B) |
-| **Total Lessons** | **63 comprehensive lessons** |
-| **Completed Lessons** | **63 (100%)** ✅ |
-| **Visualizations** | 56+ professional diagrams |
-| **Code Examples** | 600+ working implementations |
-| **Practice Exercises** | 200+ hands-on problems |
-| **Lines of Content** | 63,000+ lines of comprehensive material |
+| **Total Modules** | 17 comprehensive modules |
+| **Total Lessons** | **93 comprehensive lessons** |
+| **Completed Lessons** | **93 (100%)** ✅ |
+| **Visualizations** | 64+ professional diagrams |
+| **Code Examples** | 1000+ working implementations |
+| **Practice Exercises** | 280+ hands-on problems |
+| **Lines of Content** | 93,000+ lines of comprehensive material |
 
 ---
 
@@ -172,6 +247,11 @@
 | **Module 10** | 4 | ✅ 100% | Production ML, MLOps, Monitoring |
 | **Module 11** | 4 | ✅ 100% | Capstone, Interview Prep, Career |
 | **Module 12** | **12** | ✅ 100% | **RL: Bandits → DQN → RLHF → Production** 🎮 |
+| **Module 13** | 5 | ✅ 100% | Classical AI, Search, MCTS, Planning |
+| **Module 14** | 6 | ✅ 100% | GANs, Diffusion, Stable Diffusion, LoRA |
+| **Module 15** | **7** | ✅ 100% | **Advanced LLMs, Multimodal, LLMOps** 🤖 |
+| **Module 16** | **8** | ✅ 100% | **RAG, Vector DBs, AI Agents** ⚡ |
+| **Module 17** | 4 | ✅ 100% | AI Safety, Ethics, Responsible Deployment |
 
 ---
 
