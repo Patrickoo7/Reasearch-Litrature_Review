@@ -6,6 +6,14 @@ Master LSTM, GRU, and Transformers for time series forecasting!
 
 ---
 
+
+## Visual Guides 📊
+
+![LSTM architecture for sequential data](../images/module7/lstm_architecture.png)
+*LSTM architecture for sequential data*
+
+---
+
 ## Why Deep Learning?
 
 **Advantages:**

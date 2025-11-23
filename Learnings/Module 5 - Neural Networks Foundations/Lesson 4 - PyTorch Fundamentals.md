@@ -6,6 +6,14 @@ Master PyTorch - the industry-standard deep learning framework!
 
 ---
 
+
+## Visual Guides 📊
+
+![Training and validation curves over epochs](../images/module5/training_progress.png)
+*Training and validation curves over epochs*
+
+---
+
 ## Why PyTorch?
 
 **Most popular framework in research & industry:**

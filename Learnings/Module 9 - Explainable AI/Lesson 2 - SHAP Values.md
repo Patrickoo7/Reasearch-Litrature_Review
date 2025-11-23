@@ -6,6 +6,14 @@ Master SHAP - the gold standard for model explanations!
 
 ---
 
+
+## Visual Guides 📊
+
+![SHAP summary and waterfall plots](../images/module9/shap_plots.png)
+*SHAP summary and waterfall plots*
+
+---
+
 ## What is SHAP?
 
 **SHapley Additive exPlanations:**

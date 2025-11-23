@@ -6,6 +6,17 @@ Master the fundamentals of neural networks - the foundation of modern deep learn
 
 ---
 
+
+## Visual Guides 📊
+
+![Multi-layer neural network architecture](../images/module5/neural_network_architecture.png)
+*Multi-layer neural network architecture*
+
+![Common activation functions (Sigmoid, Tanh, ReLU, etc.)](../images/module5/activation_functions.png)
+*Common activation functions (Sigmoid, Tanh, ReLU, etc.)*
+
+---
+
 ## Why Neural Networks?
 
 **Universal Function Approximators:**

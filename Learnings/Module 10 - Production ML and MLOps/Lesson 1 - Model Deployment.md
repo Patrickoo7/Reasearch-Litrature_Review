@@ -6,6 +6,14 @@ Deploy ML models to production - from notebook to API!
 
 ---
 
+
+## Visual Guides 📊
+
+![Common deployment patterns: batch, real-time, streaming, edge](../images/module10/deployment_patterns.png)
+*Common deployment patterns: batch, real-time, streaming, edge*
+
+---
+
 ## Deployment Options 🎯
 
 1. **REST API** (Flask, FastAPI)

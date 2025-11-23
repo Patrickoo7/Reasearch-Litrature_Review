@@ -6,6 +6,14 @@ Master LIME - Local Interpretable Model-agnostic Explanations!
 
 ---
 
+
+## Visual Guides 📊
+
+![LIME local explanation](../images/module9/lime_explanation.png)
+*LIME local explanation*
+
+---
+
 ## What is LIME?
 
 **Explains individual predictions by approximating with simple model:**

@@ -6,6 +6,17 @@ Understand which features drive your model's predictions!
 
 ---
 
+
+## Visual Guides 📊
+
+![Feature importance methods comparison](../images/module9/feature_importance.png)
+*Feature importance methods comparison*
+
+![Partial dependence plots](../images/module9/partial_dependence.png)
+*Partial dependence plots*
+
+---
+
 ## Why Explainability?
 
 **Black box models need explanation:**

@@ -6,6 +6,14 @@ Master neural networks for recommendations - SOTA approach!
 
 ---
 
+
+## Visual Guides 📊
+
+![Two-tower neural recommender architecture](../images/module8/neural_recommender.png)
+*Two-tower neural recommender architecture*
+
+---
+
 ## Why Neural Networks?
 
 **Traditional CF limitations:**

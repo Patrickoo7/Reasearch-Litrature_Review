@@ -6,6 +6,14 @@ Monitor and maintain ML systems in production!
 
 ---
 
+
+## Visual Guides 📊
+
+![ML model monitoring dashboard](../images/module10/monitoring_dashboard.png)
+*ML model monitoring dashboard*
+
+---
+
 ## Why Monitor?
 
 **ML models degrade over time:**

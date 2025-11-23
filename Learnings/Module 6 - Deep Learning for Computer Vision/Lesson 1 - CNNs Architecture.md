@@ -6,6 +6,20 @@ Master CNNs - the backbone of modern computer vision!
 
 ---
 
+
+## Visual Guides 📊
+
+![Convolution operation - filter applied to input](../images/module6/convolution_operation.png)
+*Convolution operation - filter applied to input*
+
+![Max pooling reduces spatial dimensions](../images/module6/pooling_operations.png)
+*Max pooling reduces spatial dimensions*
+
+![Complete CNN architecture](../images/module6/cnn_architecture.png)
+*Complete CNN architecture*
+
+---
+
 ## Why CNNs for Images?
 
 **Fully connected networks fail for images:**

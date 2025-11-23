@@ -6,6 +6,14 @@ Learn from the best - VGG, ResNet, EfficientNet and more!
 
 ---
 
+
+## Visual Guides 📊
+
+![ResNet skip connections solving vanishing gradient](../images/module6/resnet_skip_connection.png)
+*ResNet skip connections solving vanishing gradient*
+
+---
+
 ## Evolution of CNN Architectures
 
 **Timeline:**

@@ -6,6 +6,14 @@ Master ARIMA - the classic time series forecasting method!
 
 ---
 
+
+## Visual Guides 📊
+
+![ARIMA forecast with confidence intervals](../images/module7/arima_forecast.png)
+*ARIMA forecast with confidence intervals*
+
+---
+
 ## ARIMA Components
 
 **ARIMA(p, d, q):**

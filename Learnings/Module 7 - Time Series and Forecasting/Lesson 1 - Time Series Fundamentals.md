@@ -6,6 +6,17 @@ Master time series basics - data indexed by time!
 
 ---
 
+
+## Visual Guides 📊
+
+![Time series decomposition: trend + seasonality + noise](../images/module7/time_series_decomposition.png)
+*Time series decomposition: trend + seasonality + noise*
+
+![ACF and PACF plots for ARIMA model selection](../images/module7/acf_pacf.png)
+*ACF and PACF plots for ARIMA model selection*
+
+---
+
 ## What is Time Series?
 
 **Data points indexed in time order:**

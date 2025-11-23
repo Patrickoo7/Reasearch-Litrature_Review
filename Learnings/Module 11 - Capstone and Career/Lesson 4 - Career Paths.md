@@ -22,6 +22,11 @@ Principal/Staff/Lead (10+ years)
 
 ## Common ML Roles 💼
 
+
+![**Figure:** ML career progression paths from entry to lead level](../images/module11/career_paths.png)
+
+**Figure:** ML career progression paths from entry to lead level
+
 ### 1. Machine Learning Engineer
 
 **What they do:**
@@ -527,6 +532,11 @@ Best for:
 
 ## Skills Development Roadmap 🛤️
 
+
+![**Figure:** Skills development from technical to leadership](../images/module11/skills_progression.png)
+
+**Figure:** Skills development from technical to leadership
+
 ### Year 1: Foundations
 ```
 ✅ Master Python
@@ -569,6 +579,11 @@ Best for:
 ---
 
 ## Continuous Learning 📚
+
+
+![**Figure:** 12-18 month ML learning journey roadmap](../images/module11/learning_path.png)
+
+**Figure:** 12-18 month ML learning journey roadmap
 
 ### Must-Follow Resources
 
@@ -657,6 +672,11 @@ Best for:
 ---
 
 ## Salary Negotiation 💰
+
+
+![**Figure:** ML engineering salary ranges by experience level (US, 2024)](../images/module11/salary_ranges.png)
+
+**Figure:** ML engineering salary ranges by experience level (US, 2024)
 
 ### Tips
 

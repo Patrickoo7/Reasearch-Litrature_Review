@@ -6,6 +6,14 @@ Master backpropagation - the algorithm that makes deep learning possible!
 
 ---
 
+
+## Visual Guides 📊
+
+![Gradient descent optimization on loss surface](../images/module5/gradient_descent.png)
+*Gradient descent optimization on loss surface*
+
+---
+
 ## The Training Process 🔄
 
 ```

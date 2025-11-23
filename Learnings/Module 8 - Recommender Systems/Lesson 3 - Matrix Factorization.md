@@ -6,6 +6,14 @@ Master matrix factorization - Netflix Prize winning technique!
 
 ---
 
+
+## Visual Guides 📊
+
+![Matrix factorization into user and item features](../images/module8/matrix_factorization.png)
+*Matrix factorization into user and item features*
+
+---
+
 ## Idea
 
 **Decompose rating matrix into user and item factors**

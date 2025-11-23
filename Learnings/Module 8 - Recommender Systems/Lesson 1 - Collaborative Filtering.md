@@ -6,6 +6,17 @@ Master collaborative filtering - the foundation of recommendation systems!
 
 ---
 
+
+## Visual Guides 📊
+
+![User-item rating matrix with missing values](../images/module8/user_item_matrix.png)
+*User-item rating matrix with missing values*
+
+![User-based vs Item-based collaborative filtering](../images/module8/collaborative_filtering.png)
+*User-based vs Item-based collaborative filtering*
+
+---
+
 ## What are Recommender Systems?
 
 **Suggest items users might like:**

@@ -6,6 +6,14 @@ Master MLOps - DevOps for Machine Learning!
 
 ---
 
+
+## Visual Guides 📊
+
+![End-to-end ML pipeline architecture](../images/module10/ml_pipeline_architecture.png)
+*End-to-end ML pipeline architecture*
+
+---
+
 ## What is MLOps?
 
 **ML + DevOps + Data Engineering:**
