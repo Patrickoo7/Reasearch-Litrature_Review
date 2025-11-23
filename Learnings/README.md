@@ -4,9 +4,9 @@ A comprehensive, structured curriculum to master Machine Learning from mathemati
 
 ## 📚 Curriculum Structure
 
-This curriculum contains **12 core modules** (with 2 specializations in Module 7), progressing from mathematical fundamentals to advanced production systems. Each module contains focused lessons that build upon previous knowledge.
+This curriculum contains **13 core modules** (with 2 specializations in Module 7), progressing from mathematical fundamentals to advanced production systems and reinforcement learning. Each module contains focused lessons that build upon previous knowledge.
 
-**Total Content:** 51 comprehensive lessons + 40+ visualizations
+**Total Content:** 63 comprehensive lessons + 56+ visualizations
 
 ---
 
@@ -30,12 +30,17 @@ Dive deep into neural networks and computer vision with CNNs, transformers, and 
 ### 🌳 **ADVANCED SPECIALIZATIONS** (Modules 7-9)
 **Estimated Time: 10-12 weeks**
 
-Master specialized domains: Time Series, NLP, and Recommender Systems. Plus explainable AI techniques.
+Master specialized domains: Time Series, NLP, Recommender Systems, and Explainable AI.
 
 ### 🏭 **PRODUCTION TRACK** (Modules 10-11)
 **Estimated Time: 4-6 weeks**
 
 Deploy, monitor, and scale ML systems. Build your career with capstone projects and interview prep.
+
+### 🎮 **REINFORCEMENT LEARNING** (Module 12)
+**Estimated Time: 48-60 weeks**
+
+Master RL from bandits to RLHF. Learn DQN, PPO, model-based RL, and align LLMs with human preferences.
 
 ---
 
@@ -490,6 +495,88 @@ Build end-to-end projects and prepare for your ML career.
 
 ---
 
+### Module 12: Reinforcement Learning 🎮
+**Level: Advanced | Time: 48-60 weeks | Lessons: 12**
+
+Master reinforcement learning from foundations to production deployment, including RLHF for LLMs.
+
+- **Lesson 1:** [Multi-Armed Bandits & Exploration](Module%2012%20-%20Reinforcement%20Learning/Lesson%201%20-%20Multi-Armed%20Bandits%20and%20Exploration.md)
+  - Exploration vs exploitation tradeoff
+  - ε-greedy, UCB, Thompson Sampling
+  - Contextual bandits and LinUCB
+  - Real-world applications (A/B testing, recommendations)
+
+- **Lesson 2:** [RL Fundamentals & Tabular Methods](Module%2012%20-%20Reinforcement%20Learning/Lesson%202%20-%20RL%20Fundamentals%20and%20Tabular%20Methods.md)
+  - Markov Decision Processes (MDPs)
+  - Bellman equations and dynamic programming
+  - Monte Carlo methods and TD learning
+  - Q-Learning and SARSA
+
+- **Lesson 3:** [Deep Q-Networks & Value-Based Methods](Module%2012%20-%20Reinforcement%20Learning/Lesson%203%20-%20Deep%20Q-Networks%20and%20Value-Based%20Methods.md)
+  - DQN architecture and experience replay
+  - Double DQN, Dueling DQN, Prioritized Replay
+  - Rainbow DQN (combining all improvements)
+  - Atari game playing
+
+- **Lesson 4:** [Policy Gradient Methods & Actor-Critic](Module%2012%20-%20Reinforcement%20Learning/Lesson%204%20-%20Policy%20Gradient%20Methods%20and%20Actor-Critic.md)
+  - REINFORCE algorithm
+  - Advantage Actor-Critic (A2C/A3C)
+  - Proximal Policy Optimization (PPO)
+  - DDPG, TD3, and SAC for continuous control
+
+- **Lesson 5:** [Model-Based Reinforcement Learning](Module%2012%20-%20Reinforcement%20Learning/Lesson%205%20-%20Model-Based%20Reinforcement%20Learning.md)
+  - Dyna and model-based planning
+  - Model Predictive Control (MPC)
+  - World Models and Dreamer
+  - Sample efficiency improvements
+
+- **Lesson 6:** [Imitation Learning & Inverse RL](Module%2012%20-%20Reinforcement%20Learning/Lesson%206%20-%20Imitation%20Learning%20and%20Inverse%20RL.md)
+  - Behavioral cloning and DAgger
+  - Inverse reinforcement learning
+  - Generative Adversarial Imitation Learning (GAIL)
+  - Learning from demonstrations
+
+- **Lesson 7:** [Offline Reinforcement Learning](Module%2012%20-%20Reinforcement%20Learning/Lesson%207%20-%20Offline%20Reinforcement%20Learning.md)
+  - Offline RL problem and distributional shift
+  - Conservative Q-Learning (CQL)
+  - Batch Constrained Q-learning (BCQ)
+  - Decision Transformer
+
+- **Lesson 8:** [Advanced Exploration & Intrinsic Motivation](Module%2012%20-%20Reinforcement%20Learning/Lesson%208%20-%20Advanced%20Exploration%20and%20Intrinsic%20Motivation.md)
+  - Intrinsic Curiosity Module (ICM)
+  - Random Network Distillation (RND)
+  - Count-based exploration
+  - Exploration in sparse reward environments
+
+- **Lesson 9:** [RLHF & Aligning Language Models ⭐](Module%2012%20-%20Reinforcement%20Learning/Lesson%209%20-%20RLHF%20and%20Aligning%20Language%20Models.md)
+  - RLHF pipeline (SFT → Reward Model → PPO)
+  - Reward modeling for human preferences
+  - Direct Preference Optimization (DPO)
+  - Constitutional AI and safety alignment
+  - **Cross-reference:** Module 7B Lessons 5 & 7
+
+- **Lesson 10:** [Multi-Agent Reinforcement Learning](Module%2012%20-%20Reinforcement%20Learning/Lesson%2010%20-%20Multi-Agent%20Reinforcement%20Learning.md)
+  - Multi-agent environments
+  - Centralized Training Decentralized Execution (CTDE)
+  - MADDPG and QMIX
+  - Self-play and emergent behavior
+
+- **Lesson 11:** [Hierarchical RL & Meta-RL](Module%2012%20-%20Reinforcement%20Learning/Lesson%2011%20-%20Hierarchical%20RL%20and%20Meta-RL.md)
+  - Options framework and temporal abstraction
+  - Hierarchical policies
+  - Meta-learning (MAML, RL²)
+  - Safe reinforcement learning
+
+- **Lesson 12:** [Production RL & Sim-to-Real](Module%2012%20-%20Reinforcement%20Learning/Lesson%2012%20-%20Production%20RL%20and%20Sim-to-Real.md)
+  - Stable-Baselines3 and Ray RLlib
+  - Sim-to-real transfer and domain randomization
+  - Production deployment considerations
+  - Real-world RL applications
+
+**✅ After Module 12:** You can implement RL systems and align LLMs with human preferences!
+
+---
+
 ## 🎯 How to Use This Curriculum
 
 ### For Complete Beginners
@@ -538,6 +625,13 @@ Build end-to-end projects and prepare for your ML career.
 - Specialization: Module 8 (Recommender Systems)
 - Production: Module 10
 - Capstone: Module 11
+
+**🎮 Reinforcement Learning Track:**
+- Core: Modules 0-5
+- Specialization: Module 12 (all 12 comprehensive lessons)
+- Includes: RLHF for LLMs (Lesson 9)
+- Cross-reference: Module 7B for NLP foundations
+- Production: Module 12 (Lesson 12)
 
 ---
 
