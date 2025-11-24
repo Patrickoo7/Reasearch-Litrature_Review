@@ -52,8 +52,9 @@ def main():
               help='Use interactive mode')
 @click.option('--timeout', type=int, default=1800,
               help='Execution timeout in seconds (default: 1800)')
+@click.option('--with-ai', is_flag=True, help='Enable AI assistant (requires Ollama or API keys)')
 @click.option('--verbose', is_flag=True, help='Verbose output')
-def reproduce(source, source_type, work_dir, github_token, interactive, timeout, verbose):
+def reproduce(source, source_type, work_dir, github_token, interactive, timeout, with_ai, verbose):
     """
     Reproduce a research paper from various sources
 
@@ -96,7 +97,8 @@ def reproduce(source, source_type, work_dir, github_token, interactive, timeout,
     # Create orchestrator
     orchestrator = ReproductionOrchestrator(
         work_dir=work_dir,
-        github_token=github_token
+        github_token=github_token,
+        use_ai=with_ai
     )
 
     try:
@@ -284,7 +286,8 @@ def inspect(repo_path, verbose):
 @click.option('--share', is_flag=True, help='Create public share link')
 @click.option('--port', type=int, default=7860, help='Port to run on')
 @click.option('--github-token', envvar='GITHUB_TOKEN', help='GitHub API token')
-def web(share, port, github_token):
+@click.option('--with-ai', is_flag=True, help='Enable AI assistant')
+def web(share, port, github_token, with_ai):
     """
     Launch web interface for browser-based access
 
@@ -295,11 +298,14 @@ def web(share, port, github_token):
 
         console.print("\n[bold cyan]Launching Research Reproducer Web Interface[/bold cyan]")
         console.print(f"[dim]Server will run on http://localhost:{port}[/dim]\n")
+        if with_ai:
+            console.print("[dim]AI assistant enabled[/dim]\n")
 
         launch_web_interface(
             github_token=github_token,
             share=share,
-            port=port
+            port=port,
+            use_ai=with_ai
         )
 
     except ImportError:

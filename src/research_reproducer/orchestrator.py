@@ -21,6 +21,7 @@ from .env_setup import EnvironmentSetup
 from .interactive import InteractiveSession
 from .executor import CodeExecutor
 from .cache import ReproducerCache
+from .ai_agent import get_default_agent, AIAgent
 
 logger = logging.getLogger(__name__)
 console = Console()
@@ -29,12 +30,13 @@ console = Console()
 class ReproductionOrchestrator:
     """Main orchestrator for reproducing research papers"""
 
-    def __init__(self, work_dir: str = './reproductions', github_token: Optional[str] = None, use_cache: bool = True):
+    def __init__(self, work_dir: str = './reproductions', github_token: Optional[str] = None, use_cache: bool = True, use_ai: bool = False):
         """
         Args:
             work_dir: Working directory for reproductions
             github_token: GitHub API token
             use_cache: Enable caching for faster repeated operations
+            use_ai: Enable AI agent assistance
         """
         self.work_dir = Path(work_dir)
         self.work_dir.mkdir(parents=True, exist_ok=True)
@@ -46,6 +48,16 @@ class ReproductionOrchestrator:
         self.use_cache = use_cache
         self.cache = ReproducerCache() if use_cache else None
 
+        # Initialize AI agent
+        self.use_ai = use_ai
+        self.ai_agent = None
+        if use_ai:
+            self.ai_agent = get_default_agent()
+            if self.ai_agent:
+                console.print("[dim]AI assistant enabled[/dim]")
+            else:
+                console.print("[yellow]⚠ AI assistant not available. Install Ollama or set API keys.[/yellow]")
+
         self.session_dir = None
         self.checkpoint_file = None
         self.report = {
@@ -54,6 +66,7 @@ class ReproductionOrchestrator:
             'analysis': {},
             'environment': {},
             'execution': {},
+            'ai_insights': {},
             'success': False,
             'timestamp': None,
         }
@@ -193,6 +206,16 @@ class ReproductionOrchestrator:
         # Initialize checkpoint
         self._save_checkpoint('initialized', {'paper': paper_metadata})
 
+        # AI paper explanation
+        if self.use_ai and self.ai_agent:
+            console.print("[bold]AI Paper Explanation[/bold]")
+            try:
+                explanation = self.ai_agent.explain_paper(paper_metadata)
+                console.print(f"[dim]{explanation}[/dim]\n")
+                self.report['ai_insights']['paper_explanation'] = explanation
+            except Exception as e:
+                logger.warning(f"AI explanation failed: {e}")
+
         # Step 1: Find repositories
         console.print("[bold]Step 1: Finding repositories[/bold]")
         with Progress(
@@ -270,6 +293,16 @@ class ReproductionOrchestrator:
         console.print(f"  Dependencies: {sum(len(d.get('packages', [])) for d in analysis['dependencies'].values())} packages")
         console.print(f"  Complexity: {analysis['estimated_complexity']}")
 
+        # AI parameter suggestions
+        if self.use_ai and self.ai_agent:
+            console.print("\n[bold]AI Parameter Suggestions[/bold]")
+            try:
+                suggestions = self.ai_agent.suggest_parameters(analysis)
+                console.print(f"[dim]{suggestions}[/dim]\n")
+                self.report['ai_insights']['parameter_suggestions'] = suggestions
+            except Exception as e:
+                logger.warning(f"AI suggestions failed: {e}")
+
         # Continue interactive session with analysis
         if interactive:
             session.analysis = analysis
@@ -334,6 +367,17 @@ class ReproductionOrchestrator:
 
         self.report['execution'] = result.to_dict()
         self.report['success'] = result.success
+
+        # AI error debugging
+        if self.use_ai and self.ai_agent and not result.success:
+            console.print("\n[bold]AI Error Analysis[/bold]")
+            try:
+                error_msg = result.stderr if result.stderr else result.stdout
+                debug_help = self.ai_agent.debug_error(error_msg, code_context=f"Repository: {selected_repo['url']}")
+                console.print(f"[dim]{debug_help}[/dim]\n")
+                self.report['ai_insights']['error_analysis'] = debug_help
+            except Exception as e:
+                logger.warning(f"AI error debugging failed: {e}")
 
         # Step 6: Generate report
         self._save_report()
